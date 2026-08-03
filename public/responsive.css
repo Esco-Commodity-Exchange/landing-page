@@ -1,0 +1,745 @@
+/*
+======================================================================
+======= ESCO COMMODITY EXCHANGE - RESPONSIVE DESIGN CUSTOM CSS =======
+======================================================================
+This stylesheet handles all viewport optimizations and is structured
+neatly by section and serial number to ensure high maintainability.
+
+--- TABLE OF SECTIONS ---
+SECTION 1  : Header Navigation Collapse (max-width: 575.98px)
+SECTION 2  : Sidebarless Page Fluid Paddings (body.no-sidebar)
+SECTION 3  : Global Mobile & Tablet Layout (max-width: 991px)
+SECTION 4  : Global Mobile Sizing Overrides (max-width: 575px)
+SECTION 5  : Critical Viewport Overrides for 360px Screens (max-width: 360px)
+SECTION 6  : Commodity Market List Columns (max-width: 575px)
+SECTION 7  : Wallet View & Balance Section (min-width: 576px / max-width: 575px)
+SECTION 8  : Order History Pagination (max-width: 575px)
+SECTION 9  : Transactions Page Mobile Layout (max-width: 767.98px)
+SECTION 10 : Spot Trading Layout Mobile Adapters (max-width: 991px)
+SECTION 11 : Send Money Page Paddings (768px / 1200px / 1400px)
+SECTION 12 : Deposit Page Paddings (768px / 1200px / 1400px)
+SECTION 13 : Withdraw Page Paddings (768px / 1200px / 1400px)
+SECTION 14 : Sidebar Visibility Overrides (min-width: 992px)
+SECTION 15 : How It Works Layout Connector Lines (min-width: 992px)
+SECTION 16 : Trade Page Sidebar Spacing (max-width: 991px)
+SECTION 17 : Mobile Touch Interactions & Row Tap States (Interactive Utilities)
+======================================================================
+*/
+
+/* ==========================================
+   SECTION 1: Header Navigation Collapse
+   ========================================== */
+@media (max-width: 575.98px) {
+    .esco-header-nav #header-navigation-collapse {
+        left: 1rem;
+        right: 1rem;
+    }
+}
+
+/* ==========================================
+   SECTION 2: Sidebarless Page Fluid Paddings
+   ========================================== */
+body.no-sidebar .dashboard-main {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+}
+
+@media (min-width: 576px) {
+    body.no-sidebar .dashboard-main {
+        padding-left: 2rem !important;
+        padding-right: 2rem !important;
+    }
+}
+
+@media (min-width: 768px) {
+    body.no-sidebar .dashboard-main {
+        padding-left: 3.5rem !important;
+        padding-right: 3.5rem !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    body.no-sidebar .dashboard-main {
+        padding-left: 5.5rem !important;
+        padding-right: 5.5rem !important;
+    }
+}
+
+@media (min-width: 1400px) {
+    body.no-sidebar .dashboard-main {
+        padding-left: 7.5rem !important;
+        padding-right: 7.5rem !important;
+    }
+}
+
+/* ==========================================
+   SECTION 3: Global Mobile & Tablet Layout
+   ========================================== */
+@media (max-width: 991px) {
+    :root {
+        --header-height: 60px !important;
+    }
+
+    .dashboard-header {
+        height: var(--header-height) !important;
+        padding: 0 1rem !important;
+    }
+
+    .auth-split-wrapper {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .auth-form-panel {
+        padding: 3rem 1.5rem;
+    }
+
+    .auth-showcase-panel {
+        padding: 3rem 1.5rem;
+        min-height: 400px;
+    }
+
+    .auth-showcase-card {
+        padding: 1.5rem;
+    }
+
+    .auth-showcase-floating-earnings {
+        bottom: -15px;
+        right: 15px;
+        padding: 0.75rem 1rem;
+    }
+
+    .commodity-market-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-graphic-container {
+        height: 300px;
+        margin-top: 2rem;
+    }
+
+    .trading-callout {
+        font-size: 1.1rem;
+        padding: 0.4rem 1rem;
+    }
+
+    .dashboard-sidebar {
+        transform: translateX(-100%);
+        top: var(--header-height);
+        height: calc(100vh - var(--header-height));
+        box-shadow: 10px 0 30px rgba(0, 0, 0, 0.05);
+    }
+
+    .dashboard-sidebar.show {
+        transform: translateX(0);
+    }
+
+    .dashboard-main {
+        margin-left: 0;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .promo-banner-content {
+        max-width: 100%;
+    }
+
+    .promo-graphics-overlay {
+        display: none;
+    }
+
+    .user-balance-section, .market-section-card, .activity-section-card {
+        padding: 18px !important;
+    }
+}
+
+/* ==========================================
+   SECTION 4: Global Mobile Sizing Overrides
+   ========================================== */
+@media (max-width: 575px) {
+    .commodity-market-grid {
+        grid-template-columns: 1fr;
+    }
+    .user-balance-section, .market-section-card, .activity-section-card {
+        padding: 14px !important;
+    }
+    .btn-circle-action {
+        padding: 10px 8px !important;
+        font-size: 0.8rem !important;
+    }
+    .commodity-avatar {
+        width: 38px !important;
+        height: 38px !important;
+        font-size: 1.150rem !important;
+    }
+    .commodity-info {
+        gap: 10px !important;
+    }
+}
+
+/* ==========================================
+   SECTION 5: Critical Viewport Overrides for 360px Screens
+   ========================================== */
+@media (max-width: 360px) {
+    :root {
+        --esco-shadow-sm: 0 1px 1px 0 rgba(0, 0, 0, 0.03);
+        --esco-shadow-md: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    body {
+        font-size: 13px !important;
+    }
+
+    main h1, .auth-form-panel h1 {
+        font-size: 1.750rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    h2, .font-display.h2 {
+        font-size: 1.4rem !important;
+    }
+
+    h3, .font-display.h3 {
+        font-size: 1.15rem !important;
+    }
+
+    .auth-form-panel {
+        padding: 1.25rem 0.85rem !important;
+    }
+
+    .auth-showcase-panel {
+        padding: 1.5rem 0.85rem !important;
+        min-height: 320px !important;
+    }
+
+    .auth-showcase-card {
+        padding: 1.15rem !important;
+        border-radius: 12px !important;
+    }
+
+    .auth-showcase-floating-earnings {
+        bottom: -10px !important;
+        right: 5px !important;
+        padding: 0.5rem 0.75rem !important;
+        border-radius: 8px !important;
+        gap: 8px !important;
+    }
+
+    .earnings-bar-icon {
+        width: 32px !important;
+        height: 32px !important;
+        border-radius: 6px !important;
+    }
+
+    .auth-showcase-floating-earnings h5 {
+        font-size: 0.95rem !important;
+    }
+
+    .esco-form-control {
+        padding: 0.75rem 0.75rem 0.75rem 2.5rem !important;
+        font-size: 0.85rem !important;
+        border-radius: 10px !important;
+    }
+
+    .esco-input-icon-left {
+        left: 0.9rem !important;
+        font-size: 0.85rem !important;
+    }
+
+    .esco-password-toggle-right {
+        right: 0.9rem !important;
+        font-size: 0.85rem !important;
+    }
+
+    .btn-esco-pill {
+        padding: 0.65rem 1.25rem !important;
+        font-size: 0.85rem !important;
+    }
+
+    .esco-brand-logo-container {
+        gap: 8px !important;
+    }
+
+    .esco-brand-badge {
+        width: 36px !important;
+        height: 36px !important;
+        font-size: 1.25rem !important;
+        border-radius: 8px !important;
+    }
+
+    .esco-brand-logo-image {
+        width: 36px !important;
+        height: 36px !important;
+        object-fit: contain !important;
+        border-radius: 50% !important;
+    }
+
+    .esco-badge-text-title {
+        font-size: 0.9rem !important;
+    }
+
+    .esco-badge-text-sub {
+        font-size: 0.52rem !important;
+    }
+
+    .esco-header-nav {
+        padding-top: 8px !important;
+        padding-bottom: 8px !important;
+    }
+
+    .hero-graphic-container {
+        height: 220px !important;
+        padding: 1rem !important;
+    }
+
+    .trading-callout {
+        font-size: 0.85rem !important;
+        padding: 0.3rem 0.85rem !important;
+        border-radius: 8px !important;
+    }
+
+    .esco-ticker-scroll-content {
+        gap: 1.25rem !important;
+    }
+
+    .esco-ticker-badge {
+        padding: 0.5rem 0.85rem !important;
+        font-size: 0.65rem !important;
+    }
+
+    .commodity-card {
+        padding: 0.85rem !important;
+        min-height: 160px !important;
+        border-radius: 12px !important;
+    }
+
+    .commodity-icon-box {
+        width: 36px !important;
+        height: 36px !important;
+        font-size: 1.150rem !important;
+    }
+
+    .esco-feature-card {
+        padding: 1.25rem !important;
+        border-radius: 12px !important;
+    }
+
+    .esco-feature-icon-wrapper {
+        width: 44px !important;
+        height: 44px !important;
+        font-size: 1.150rem !important;
+        margin-bottom: 1rem !important;
+        border-radius: 10px !important;
+    }
+
+    .esco-view-switcher-bar {
+        bottom: 12px !important;
+        padding: 4px !important;
+        width: 95% !important;
+    }
+
+    .switcher-btn {
+        padding: 6px 10px !important;
+        font-size: 0.75rem !important;
+    }
+}
+
+/* ==========================================
+   SECTION 6: Commodity Market List Columns
+   ========================================== */
+@media (max-width: 575px) {
+    .commodity-col-info {
+        width: auto;
+        flex-grow: 1;
+    }
+    .commodity-col-price {
+        display: none !important;
+    }
+    .commodity-col-change {
+        width: auto;
+        text-align: right;
+    }
+}
+
+/* ==========================================
+   SECTION 7: Wallet View & Balance Section
+   ========================================== */
+@media (min-width: 576px) {
+    .border-start-sm {
+        border-left: 1px solid #e2e8f0 !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .border-top-mobile-styled {
+        border-top: 1px solid #e2e8f0 !important;
+        padding-top: 0.5rem !important;
+        margin-top: 0.5rem !important;
+    }
+    .user-balance-section {
+        padding: 1.15rem !important;
+    }
+}
+
+/* ==========================================
+   SECTION 8: Order History Pagination
+   ========================================== */
+@media (max-width: 575px) {
+    .order-pagination-container {
+        flex-direction: column-reverse !important;
+        gap: 12px;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center;
+        padding-top: 18px !important;
+    }
+    .order-filter-pill-bar {
+        justify-content: start;
+        padding-left: 4px;
+    }
+}
+
+/* ==========================================
+   SECTION 9: Transactions Page Mobile Layout
+   ========================================== */
+@media (max-width: 767.98px) {
+    .esco-wrapper > main.dashboard-main > section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        overflow: visible !important;
+        gap: 8px !important;
+        padding-bottom: 6px !important;
+        margin-bottom: 4px !important;
+        justify-content: flex-start !important;
+        width: 100% !important;
+    }
+    .esco-wrapper > main.dashboard-main > section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) .dropdown {
+        flex: 1 1 auto !important;
+        min-width: 95px !important;
+        position: relative !important;
+    }
+    .esco-wrapper > main.dashboard-main > section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) .dropdown-menu {
+        z-index: 1060 !important;
+        position: absolute !important;
+    }
+    .esco-wrapper > main.dashboard-main > section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) .filter-dropdown-btn {
+        width: 100% !important;
+        justify-content: space-between !important;
+        font-size: 0.78rem !important;
+        padding: 0 8px !important;
+        height: 38px !important;
+    }
+    .esco-wrapper > main.dashboard-main > section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) .btn-icon-filter {
+        flex-shrink: 0 !important;
+        height: 38px !important;
+        width: 38px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .transactions-card {
+        border: none !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+    }
+    .transactions-card .card-footer {
+        background-color: transparent !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        border-top: none !important;
+    }
+    .mobile-tx-card {
+        background-color: #ffffff;
+        border: 1px solid #f1f5f9;
+        border-radius: 12px;
+        padding: 16px;
+        margin-bottom: 12px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+    .mobile-tx-card .tx-id-chip {
+        background-color: #f1f5f9;
+        color: #334155;
+        font-family: var(--font-mono), 'JetBrains Mono', monospace;
+        font-weight: 600;
+        font-size: 0.78rem;
+        padding: 3px 8px;
+        border-radius: 6px;
+    }
+    .mobile-tx-card .tx-date {
+        font-size: 0.78rem;
+        color: #94a3b8;
+        margin-left: 8px;
+    }
+    .mobile-tx-card .tx-type-label {
+        font-size: 0.72rem;
+        font-weight: 700;
+        color: #64748b;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+    }
+    .mobile-tx-card .tx-desc-text {
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: #1e293b;
+    }
+    .mobile-tx-card .tx-amount-text {
+        font-family: var(--font-mono), 'JetBrains Mono', monospace;
+        font-size: 1.15rem;
+        font-weight: 700;
+    }
+}
+
+/* ==========================================
+   SECTION 10: Spot Trading Layout Mobile Adapters
+   ========================================== */
+@media (max-width: 991px) {
+    .spot-layout-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+    .spot-left-column, .spot-center-column, .spot-main-working-area, .spot-top-row {
+        display: contents !important;
+    }
+    .spot-right-column {
+        display: none !important;
+    }
+    .desktop-only-stats {
+        display: none !important;
+    }
+    .mobile-stats-row {
+        display: block;
+    }
+    .mobile-sticky-tabs {
+        display: flex;
+    }
+    .mobile-sticky-action-bar {
+        display: none !important;
+    }
+    .spot-main-table-card {
+        margin-bottom: 20px;
+        border-radius: 0 !important;
+        border-left: none !important;
+        border-right: none !important;
+    }
+    body.no-sidebar main.dashboard-main,
+    main.dashboard-main {
+        padding-left: 0.4rem !important;
+        padding-right: 0.4rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    .spot-card {
+        padding: 0.5rem !important;
+        border-radius: 8px !important;
+    }
+
+    #mobile-inline-actions {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+        padding-top: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+    }
+
+    #positions-ledger-mobile-cards {
+        padding: 0.5rem 0.25rem !important;
+    }
+
+    #trading-positions-active-panel .dropdown button.btn-sm {
+        font-size: 0.8rem !important;
+        padding: 0.2rem 0.5rem !important;
+        border-radius: 4px !important;
+    }
+
+    #trading-positions-active-panel label {
+        font-size: 0.7rem !important;
+    }
+
+    #trading-positions-active-panel label input[type="checkbox"] {
+        width: 11px !important;
+        height: 11px !important;
+        margin-top: 0 !important;
+    }
+
+    .mobile-sheet-content {
+        padding: 0.85rem !important;
+        margin: 8px !important;
+        max-height: 90vh !important;
+        border-radius: 16px !important;
+        padding-bottom: 2.25rem !important;
+    }
+
+    #mobile-order-drawer .spot-card {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    #mobile-order-drawer .trader-input-group {
+        padding: 0.55rem 0.75rem !important;
+        margin-bottom: 0.65rem !important;
+        border-radius: 10px !important;
+    }
+
+    #mobile-order-drawer .trader-input-group label {
+        font-size: 0.8rem !important;
+        width: 54px !important;
+    }
+
+    #mobile-order-drawer .trader-input-group input {
+        font-size: 0.9rem !important;
+    }
+
+    #mobile-order-drawer .trader-input-group span {
+        font-size: 0.75rem !important;
+        width: 40px !important;
+    }
+
+    #mobile-order-drawer .btn-execute-trade {
+        padding: 0.75rem !important;
+        font-size: 0.9rem !important;
+        margin-top: 0.75rem !important;
+        border-radius: 10px !important;
+    }
+
+    #mobile-order-drawer .buy-tab-btn,
+    #mobile-order-drawer .sell-tab-btn {
+        padding: 0.45rem !important;
+        font-size: 0.85rem !important;
+    }
+
+    #mobile-order-drawer .order-type-tabs {
+        margin-bottom: 0.75rem !important;
+    }
+
+    #mobile-order-drawer .order-type-tab {
+        padding: 0.35rem 0.5rem !important;
+        font-size: 0.82rem !important;
+    }
+
+    #mobile-order-drawer .percentage-ticks {
+        margin-top: 0.25rem !important;
+    }
+
+    #mobile-order-drawer .percentage-tick {
+        font-size: 0.72rem !important;
+        padding: 0.15rem 0.35rem !important;
+    }
+}
+
+/* ==========================================
+   SECTION 11: Send Money Page Paddings
+   ========================================== */
+@media (min-width: 768px) {
+    .send-container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+@media (min-width: 1200px) {
+    .send-container {
+        padding-left: 4.5rem;
+        padding-right: 4.5rem;
+    }
+}
+@media (min-width: 1400px) {
+    .send-container {
+        padding-left: 6.5rem;
+        padding-right: 6.5rem;
+    }
+}
+
+/* ==========================================
+   SECTION 12: Deposit Page Paddings
+   ========================================== */
+@media (min-width: 768px) {
+    .deposit-container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+@media (min-width: 1200px) {
+    .deposit-container {
+        padding-left: 4.5rem;
+        padding-right: 4.5rem;
+    }
+}
+@media (min-width: 1400px) {
+    .deposit-container {
+        padding-left: 6.5rem;
+        padding-right: 6.5rem;
+    }
+}
+
+/* ==========================================
+   SECTION 13: Withdraw Page Paddings
+   ========================================== */
+@media (min-width: 768px) {
+    .withdraw-container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+@media (min-width: 1200px) {
+    .withdraw-container {
+        padding-left: 4.5rem;
+        padding-right: 4.5rem;
+    }
+}
+@media (min-width: 1400px) {
+    .withdraw-container {
+        padding-left: 6.5rem;
+        padding-right: 6.5rem;
+    }
+}
+
+/* ==========================================
+   SECTION 14: Sidebar Visibility Overrides
+   ========================================== */
+@media (min-width: 992px) {
+    body.no-sidebar aside#dashboard-sidebar {
+        display: none !important;
+    }
+    body.no-sidebar #sidebar-toggle-btn {
+        display: none !important;
+    }
+}
+
+/* ==========================================
+   SECTION 15: How It Works Layout Connector Lines
+   ========================================== */
+@media (min-width: 992px) {
+    .steps-connector-line {
+        display: block !important;
+    }
+}
+
+/* ==========================================
+   SECTION 16: Trade Page Sidebar Spacing
+   ========================================== */
+@media (max-width: 991px) {
+    body.logged-in #trade-dashboard-main {
+        padding-top: 0.5rem !important;
+    }
+    body.not-logged-in #trade-dashboard-main {
+        padding-top: 0.5rem !important;
+    }
+}
+
+/* ==========================================
+   SECTION 17: Mobile Touch Interactions & Row Tap States
+   ========================================== */
+.hover-btn-mobile-action {
+    transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hover-btn-mobile-action:active {
+    transform: scale(0.96);
+    background-color: #e2e8f0 !important;
+}
+
+.mobile-asset-row {
+    transition: background-color 0.15s ease;
+}
+.mobile-asset-row:active {
+    background-color: #f1f5f9 !important;
+}
