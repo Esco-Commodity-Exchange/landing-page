@@ -13,16 +13,6 @@ export function TimeAgo(date){
 }
 
 class Home extends Component {
-    constructor() {
-        super();
-        this.state={
-           token:"",loading:true
-        }
-    }
-
-    componentDidMount() {
-
-    }
 
 
     render() {
