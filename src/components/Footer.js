@@ -38,6 +38,13 @@ class Footer extends Component {
                                     </svg>
                                     <span className="footer-social-text">Group</span>
                                 </a>
+								<a target={"_blank"} className="footer-social-link" href="https://www.facebook.com/esco543" aria-label="Telegram Group">
+                                    <svg className="footer-social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                            <path fill="currentColor" d="M12 2.04c-5.5 0-10 4.5-10 10 0 5 3.66 9.13 8.44 9.88v-6.99h-2.54v-2.89h2.54V9.79c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.89h-2.33v6.98c4.78-.75 8.44-4.88 8.44-9.88 0-5.5-4.5-10-10-10z"/>
+                                    </svg>
+
+                                    <span className="footer-social-text">Page</span>
+                                </a>
                             </div>
                         </div>
                         <div className="footer-bottom">&copy; 2026 ESCO Commodity Exchange. All rights reserved.</div>
