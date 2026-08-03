@@ -5,83 +5,44 @@ class Footer extends Component {
     render() {
         return (
             <>
-                <footer className="bg-esco-forest-dark text-white pt-5 pb-4 mt-5" id="contact">
-                    <div className="container py-4 border-bottom border-secondary border-opacity-20">
-                        <div className="row g-4">
-
-                            <div className="col-lg-4">
-                                <aside className="esco-brand-logo-container mb-3">
-                    <span className="esco-brand-badge">
-                        <img className="esco-brand-logo-image" src="/Logo-Final.png" alt="Esco Commodity Exchange logo" />
-                    </span>
-                                    <div>
-                                        <h4 className="font-display fw-bold text-white m-0">ESCO</h4>
-                                        <span className="esco-badge-text-sub text-white-50 text-uppercase tracking-wider">Commodity Exchange</span>
-                                    </div>
-                                </aside>
-                                <p className="text-white-50 small mb-4" style={{ maxWidth: "280px" }}>
-                                    Secure. Transparent. Direct. The future of commodity trading is here in Bangladesh.
-                                </p>
-                                <ul className="list-inline m-0 p-0 d-flex gap-3">
-                                    <li><a href="#" className="esco-footer-link fs-5" target={"_blank"}><i className="bi bi-twitter-x"></i></a></li>
-                                    <li><a href="#" className="esco-footer-link fs-5" target={"_blank"}><i className="bi bi-linkedin"></i></a></li>
-                                    <li><a href="#" className="esco-footer-link fs-5" target={"_blank"}><i className="bi bi-youtube"></i></a></li>
-                                    <li><a href="#" className="esco-footer-link fs-5" target={"_blank"}><i className="bi bi-facebook"></i></a></li>
-                                </ul>
+                <footer className="site-footer">
+                    <div className="site-container">
+                        <div className="footer-row">
+                            <Link className="brand footer-brand" to="/"
+                               aria-label="ESCO Commodity Exchange home">
+              <span className="brand-mark">
+                <img src="/Logo-Final.png" alt="" aria-hidden="true"/>
+              </span>
+                                <span className="brand-copy">
+                <span className="brand-name">ESCO Commodity Exchange</span>
+              </span>
+                            </Link>
+                            <div className="footer-links" aria-label="Footer links">
+                                <Link className="footer-nav-link" to="/terms"
+                                   rel="noopener noreferrer">Terms &amp; Conditions</Link>
+                                <Link className="footer-nav-link" to="/privacy"
+                                   rel="noopener noreferrer">Privacy Policy</Link>
                             </div>
-
-                            <div className="col-6 col-md-3 col-lg-2">
-                                <h6 className="text-white fw-bold mb-3">Company</h6>
-                                <ul className="list-unstyled d-flex flex-column gap-2 m-0 p-0">
-                                    <li><Link to="/about" className="esco-footer-link">About Us</Link></li>
-                                    <li><Link to="/support" className="esco-footer-link">Support Hub</Link></li>
-                                    <li><Link to="/support" className="esco-footer-link">Contact Us</Link></li>
-                                </ul>
+                            <div className="footer-social" aria-label="Telegram links">
+                                <a target={"_blank"} className="footer-social-link" href="https://t.me/esco_commodity" aria-label="Telegram Channel">
+                                    <svg className="footer-social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path
+                                            d="M21.9 3.8 2.9 11.2c-1 .4-1 1.8 0 2.1l4.8 1.7 1.9 5.2c.3.8 1.4 1 1.9.3l2.8-3.8 4.8 3.5c.7.5 1.8.2 2-.8l2.8-13.2c.2-1-.6-1.8-1.6-1.4zM9.7 13.3l8.7-7.5-7.4 8.8 4.6 4.5-5.5-2-2-5.5z"/>
+                                    </svg>
+                                    <span className="footer-social-text">Channel</span>
+                                </a>
+                                <a target={"_blank"} className="footer-social-link" href="https://t.me/esco_commodity_group" aria-label="Telegram Group">
+                                    <svg className="footer-social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path
+                                            d="M21.9 3.8 2.9 11.2c-1 .4-1 1.8 0 2.1l4.8 1.7 1.9 5.2c.3.8 1.4 1 1.9.3l2.8-3.8 4.8 3.5c.7.5 1.8.2 2-.8l2.8-13.2c.2-1-.6-1.8-1.6-1.4zM9.7 13.3l8.7-7.5-7.4 8.8 4.6 4.5-5.5-2-2-5.5z"/>
+                                    </svg>
+                                    <span className="footer-social-text">Group</span>
+                                </a>
                             </div>
-
-                            <div className="col-6 col-md-3 col-lg-2">
-                                <h6 className="text-white fw-bold mb-3">Markets</h6>
-                                <ul className="list-unstyled d-flex flex-column gap-2 m-0 p-0">
-                                    <li><Link href="#markets" className="esco-footer-link">Agricultural Goods</Link></li>
-                                    <li><Link href="#markets" className="esco-footer-link">Metals</Link></li>
-                                    <li><a href="/#markets" className="esco-footer-link">Market Overview</a></li>
-                                </ul>
-                            </div>
-
-                            <div className="col-6 col-md-3 col-lg-2">
-                                <h6 className="text-white fw-bold mb-3">Resources</h6>
-                                <ul className="list-unstyled d-flex flex-column gap-2 m-0 p-0">
-                                    <li><Link to="/how-it-works" className="esco-footer-link">How It Works</Link></li>
-                                    <li>
-                                        <a href="javascript:void(0)" className="esco-footer-link"
-                                           onClick={() => alert('Whitepaper is being localized for regional clearing authorities. Please check back soon.')}>
-                                            Whitepaper
-                                        </a>
-                                    </li>
-                                    <li><Link to="/faqs" className="esco-footer-link">FAQs</Link></li>
-                                </ul>
-                            </div>
-
-                            <div className="col-12 col-md-3 col-lg-2">
-                                <h6 className="text-white fw-bold mb-3">Legal & Contact</h6>
-                                <ul className="list-unstyled d-flex flex-column gap-2 m-0 p-0 text-white-50 small">
-                                    <li><Link to="/terms" className="esco-footer-link">Terms of Service</Link></li>
-                                    <li><Link to="/privacy" className="esco-footer-link">Privacy Policy</Link></li>
-                                    <li className="mt-2 text-white">📧 escotradecoltd@gmail.com</li>
-                                    <li className="text-white">📍 Gafargaon Mymensingh , Bangladesh</li>
-                                </ul>
-                            </div>
-
                         </div>
-                    </div>
-
-                    <div className="container pt-3 text-center text-md-start">
-        <span className="text-white-50 small">
-            © 2026 Esco Commodity Exchange. All rights reserved.
-        </span>
+                        <div className="footer-bottom">&copy; 2026 ESCO Commodity Exchange. All rights reserved.</div>
                     </div>
                 </footer>
-
             </>
         );
     }
