@@ -1,28 +1,74 @@
-# Esco Trade & Co Ltd. — React Website
+# Esco Trade & Co Ltd. Corporate Website
 
-Responsive multi-page React website built with Vite, React Router and Lucide React.
+Responsive multi-page React website built with React, Vite, React Router and Lucide React.
 
 ## Run locally
-1. Extract this ZIP.
-2. Open the project folder in Terminal.
-3. Run `npm install`
-4. Run `npm run dev`
-5. Open the local URL shown by Vite.
+
+```bash
+npm install
+npm run dev
+```
+
+Open the local URL printed by Vite (normally http://localhost:5173).
 
 ## Production build
-Run `npm run build`.
 
-## Pages included
-Home, About Us, Our Brands, Shompod, Business, Compliance, Media, Contact, Terms & Conditions, Privacy Policy, Refund Policy and Risk Disclosure.
+```bash
+npm run build
+```
 
-## Before publishing
-Edit `src/data.js` and replace the placeholder company TIN, Trade License and BIN fields with verified official details. Confirm the phone/email. Review legal page starter copy with a qualified adviser. Add the approved company profile PDF at `public/company-profile.pdf`.
+## Project structure
 
+```text
+src/
+  components/
+    Layout.jsx
+    PageHero.jsx
+  pages/
+    Home.jsx
+    About.jsx
+    Brands.jsx
+    Shompod.jsx
+    Business.jsx
+    Compliance.jsx
+    Media.jsx
+    Contact.jsx
+    Terms.jsx
+    PrivacyPolicy.jsx
+    RefundPolicy.jsx
+    RiskDisclosure.jsx
+  data.js
+  router.jsx
+  App.jsx
+  main.jsx
+  styles.css
+```
 
-## Legal pages included and linked
-- `/legal/terms-and-conditions`
-- `/legal/privacy-policy`
-- `/legal/refund-policy`
-- `/legal/risk-disclosure`
+Every page has its own JSX file. Routing is maintained separately in `src/router.jsx`. Source code is formatted with readable indentation and line breaks.
 
-These are accessible from the top navigation and the homepage Policy section. The footer remains limited to company address, phone, email and copyright as requested.
+## Routes
+
+- `/` — Home
+- `/about` — About Us
+- `/brands` — Our Brands
+- `/brands/shompod` — Shompod
+- `/business` — Business Areas
+- `/compliance` — Company Information
+- `/media` — Media
+- `/contact` — Contact
+- `/terms` — Terms & Conditions
+- `/privacy-policy` — Privacy Policy
+- `/refund-policy` — Refund Policy
+- `/risk-disclosure` — Risk Disclosure
+
+## Company information
+
+Company information is maintained in `src/data.js`:
+
+- Trade License: 267
+- TIN: 354561795486
+- RJSC Incorporation: C-202179/2025
+- Phone: 01612280451
+- Email: support@esco.com.bd
+
+Verify the company details and have policy text reviewed before deploying the live website.
